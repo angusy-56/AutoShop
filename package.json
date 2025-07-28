@@ -1,0 +1,8 @@
+@@ .. @@
+   "scripts": {
+     "dev": "next dev",
+-    "build": "next build",
++    "build": "NEXT_SWC_BINARY_TARGET=wasm next build",
+     "start": "next start",
+     "lint": "next lint"
+   },

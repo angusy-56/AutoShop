@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { Award, Users, Wrench, Clock } from 'lucide-react';
+import { Award, Users, Wrench, Clock, Shield } from 'lucide-react';
 
 const timeline = [
   {

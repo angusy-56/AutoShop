@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect } from 'react';
-import { Award, Clock, Shield, Zap, Users, Star } from 'lucide-react';
+import Link from 'next/link';
+import { Award, Clock, Shield, Zap, Users, Star, ArrowRight } from 'lucide-react';
 
 const features = [
   {

@@ -1,7 +1,9 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect } from 'react';
 import { Wrench, Search, Disc, Zap, Gauge, Droplets, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const services = [
   {

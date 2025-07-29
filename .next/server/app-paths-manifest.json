@@ -2,5 +2,6 @@
   "/page": "app/page.js",
   "/about/page": "app/about/page.js",
   "/contact/page": "app/contact/page.js",
-  "/pay/page": "app/pay/page.js"
+  "/pay/page": "app/pay/page.js",
+  "/quote/page": "app/quote/page.js"
 }

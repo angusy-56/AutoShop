@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, Zap } from 'lucide-react';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,19 +27,23 @@ export function Navigation() {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'glass-effect shadow-lg' : 'bg-white border-b border-gray-100'
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      isScrolled ? 'nav-glass scrolled' : 'nav-glass'
     }`}>
+      {/* Animated Background */}
+      <div className="animated-bg"></div>
+      
       <div className="section-wrapper">
-        <div className="flex items-center justify-between h-18">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent-hover rounded-xl flex items-center justify-center shadow-lg">
-              {/* TODO: Replace with actual logo */}
-              <span className="text-white font-bold text-xl">MSP</span>
+          <Link href="/" className="flex items-center space-x-4 group">
+            <div className="relative w-14 h-14 rounded-2xl flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:scale-110">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-primary to-accent-secondary opacity-90"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-primary to-accent-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+              <Zap className="w-7 h-7 text-white relative z-10" />
             </div>
             <div className="hidden sm:block">
-              <span className="font-bold text-xl text-ink">Mean Streets Performance</span>
+              <span className="font-bold text-xl gradient-text">Mean Streets Performance</span>
             </div>
           </Link>
 
@@ -58,15 +62,15 @@ export function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-4">
               <a
                 href="tel:+1234567890"
-                className="btn btn-secondary flex items-center space-x-2"
+                className="btn-secondary flex items-center space-x-2"
               >
                 <Phone className="w-4 h-4" />
                 <span>(123) 456-7890</span>
               </a>
-              <Link href="/quote" className="btn btn-primary ripple">
+              <Link href="/quote" className="btn-premium">
                 Get a Quote
               </Link>
             </div>
@@ -75,15 +79,15 @@ export function Navigation() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="md:hidden p-3 rounded-xl glass-effect hover:bg-surface-hover transition-all duration-300"
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 bg-white">
+          <div className="md:hidden py-6 border-t border-glass-border glass-effect backdrop-blur-20">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
@@ -99,17 +103,17 @@ export function Navigation() {
                   {link.label}
                 </Link>
               ))}
-              <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
+              <div className="flex flex-col space-y-4 pt-6 border-t border-glass-border">
                 <a
                   href="tel:+1234567890"
-                  className="btn btn-secondary flex items-center justify-center space-x-2"
+                  className="btn-secondary flex items-center justify-center space-x-2"
                 >
                   <Phone className="w-4 h-4" />
                   <span>(123) 456-7890</span>
                 </a>
                 <Link
                   href="/quote"
-                  className="btn btn-primary ripple"
+                  className="btn-premium"
                   onClick={() => setIsOpen(false)}
                 >
                   Get a Quote

@@ -62,34 +62,34 @@ export function TestimonialSlider() {
   }, []);
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-24 bg-gray-50">
       <div className="section-wrapper">
-        <div className="text-center mb-16 fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">
+        <div className="text-center mb-20 fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-ink mb-6">
             What Our Customers Say
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-xl text-gray-600">
             Don't just take our word for it
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto fade-in">
-          <div className="card p-8 md:p-12 text-center relative">
-            <div className="flex justify-center mb-6">
+          <div className="testimonial-card text-center relative">
+            <div className="flex justify-center mb-8">
               {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
               ))}
             </div>
 
-            <blockquote className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
+            <blockquote className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed font-medium">
               "{testimonials[currentIndex].text}"
             </blockquote>
 
             <div>
-              <p className="font-semibold text-ink text-lg">
+              <p className="font-bold text-ink text-xl mb-2">
                 {testimonials[currentIndex].name}
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-500 font-medium">
                 {testimonials[currentIndex].vehicle}
               </p>
             </div>
@@ -97,26 +97,26 @@ export function TestimonialSlider() {
             {/* Navigation buttons */}
             <button
               onClick={prevTestimonial}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-200"
+              className="absolute left-6 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-100"
             >
-              <ChevronLeft className="w-5 h-5 text-gray-600" />
+              <ChevronLeft className="w-6 h-6 text-gray-600" />
             </button>
             <button
               onClick={nextTestimonial}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-200"
+              className="absolute right-6 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-white shadow-lg hover:shadow-xl transition-all duration-200 border border-gray-100"
             >
-              <ChevronRight className="w-5 h-5 text-gray-600" />
+              <ChevronRight className="w-6 h-6 text-gray-600" />
             </button>
           </div>
 
           {/* Dots indicator */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-10 space-x-3">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                  index === currentIndex ? 'bg-accent' : 'bg-gray-300'
+                className={`w-4 h-4 rounded-full transition-all duration-200 ${
+                  index === currentIndex ? 'bg-accent shadow-lg' : 'bg-gray-300 hover:bg-gray-400'
                 }`}
               />
             ))}

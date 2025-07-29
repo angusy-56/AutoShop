@@ -41,33 +41,33 @@ export function WhyChooseUs() {
   }, []);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
       <div className="section-wrapper">
-        <div className="text-center mb-16 fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">
+        <div className="text-center mb-20 fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-ink mb-6">
             Why Choose Mean Streets Performance?
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We combine technical expertise with honest service to deliver the best automotive care
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
               <div
                 key={feature.title}
-                className="card p-8 text-center fade-in"
+                className="card p-10 text-center fade-in hover:shadow-xl transition-all duration-300"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <Icon className="w-10 h-10 text-accent" />
+                <div className="w-20 h-20 bg-gradient-to-br from-accent to-accent-hover rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-lg">
+                  <Icon className="w-10 h-10 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-ink mb-4">
+                <h3 className="text-2xl font-bold text-ink mb-6">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-lg">
                   {feature.description}
                 </p>
               </div>

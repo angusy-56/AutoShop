@@ -108,7 +108,7 @@ export default function PayPage() {
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="form-label">
                   Invoice Number *
                 </label>
                 <input
@@ -116,20 +116,20 @@ export default function PayPage() {
                   name="invoiceNumber"
                   value={formData.invoiceNumber}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors ${
-                    errors.invoiceNumber ? 'border-red-500' : 'border-gray-300'
+                  className={`form-input ${
+                    errors.invoiceNumber ? 'error' : ''
                   }`}
                   placeholder="INV-2024-001"
                 />
-                {errors.invoiceNumber && <p className="text-red-500 text-sm mt-1">{errors.invoiceNumber}</p>}
+                {errors.invoiceNumber && <p className="error-message">{errors.invoiceNumber}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="form-label">
                   Amount (USD) *
                 </label>
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">$</span>
+                  <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium">$</span>
                   <input
                     type="number"
                     name="amount"
@@ -137,17 +137,17 @@ export default function PayPage() {
                     onChange={handleInputChange}
                     step="0.01"
                     min="0"
-                    className={`w-full pl-8 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors ${
-                      errors.amount ? 'border-red-500' : 'border-gray-300'
+                    className={`form-input pl-8 ${
+                      errors.amount ? 'error' : ''
                     }`}
                     placeholder="0.00"
                   />
                 </div>
-                {errors.amount && <p className="text-red-500 text-sm mt-1">{errors.amount}</p>}
+                {errors.amount && <p className="error-message">{errors.amount}</p>}
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="form-label">
                   Email Address *
                 </label>
                 <input
@@ -155,12 +155,12 @@ export default function PayPage() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
+                  className={`form-input ${
+                    errors.email ? 'error' : ''
                   }`}
                   placeholder="your@email.com"
                 />
-                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                {errors.email && <p className="error-message">{errors.email}</p>}
                 <p className="text-sm text-gray-500 mt-1">
                   Receipt will be sent to this email address
                 </p>
@@ -176,7 +176,7 @@ export default function PayPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn btn-primary ripple py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full btn-premium py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Processing...' : 'Proceed to Payment'}
               </button>

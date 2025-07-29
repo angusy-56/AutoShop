@@ -156,7 +156,7 @@ export default function QuotePage() {
           </div>
 
           <div className="card p-8">
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} className="modern-form">
               {/* Honeypot field */}
               <input
                 type="text"
@@ -170,10 +170,10 @@ export default function QuotePage() {
 
               {/* Contact Information */}
               <div>
-                <h2 className="text-xl font-semibold text-ink mb-4">Contact Information</h2>
+                <h2 className="text-xl font-semibold text-gray-900 mb-6">Contact Information</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Name *
                     </label>
                     <input
@@ -181,15 +181,15 @@ export default function QuotePage() {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors ${
-                        errors.name ? 'border-red-500' : 'border-gray-300'
+                      className={`form-input ${
+                        errors.name ? 'error' : ''
                       }`}
                       placeholder="Your full name"
                     />
-                    {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                    {errors.name && <p className="error-message">{errors.name}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Email *
                     </label>
                     <input
@@ -197,15 +197,15 @@ export default function QuotePage() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors ${
-                        errors.email ? 'border-red-500' : 'border-gray-300'
+                      className={`form-input ${
+                        errors.email ? 'error' : ''
                       }`}
                       placeholder="your@email.com"
                     />
-                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+                    {errors.email && <p className="error-message">{errors.email}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Phone *
                     </label>
                     <input
@@ -213,22 +213,22 @@ export default function QuotePage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors ${
-                        errors.phone ? 'border-red-500' : 'border-gray-300'
+                      className={`form-input ${
+                        errors.phone ? 'error' : ''
                       }`}
                       placeholder="(123) 456-7890"
                     />
-                    {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
+                    {errors.phone && <p className="error-message">{errors.phone}</p>}
                   </div>
                 </div>
               </div>
 
               {/* Vehicle Information */}
               <div>
-                <h2 className="text-xl font-semibold text-ink mb-4">Vehicle Information</h2>
+                <h2 className="text-xl font-semibold text-gray-900 mb-6">Vehicle Information</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Year *
                     </label>
                     <input
@@ -236,15 +236,15 @@ export default function QuotePage() {
                       name="vehicleYear"
                       value={formData.vehicleYear}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors ${
-                        errors.vehicleYear ? 'border-red-500' : 'border-gray-300'
+                      className={`form-input ${
+                        errors.vehicleYear ? 'error' : ''
                       }`}
                       placeholder="2020"
                     />
-                    {errors.vehicleYear && <p className="text-red-500 text-sm mt-1">{errors.vehicleYear}</p>}
+                    {errors.vehicleYear && <p className="error-message">{errors.vehicleYear}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Make *
                     </label>
                     <input
@@ -252,15 +252,15 @@ export default function QuotePage() {
                       name="vehicleMake"
                       value={formData.vehicleMake}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors ${
-                        errors.vehicleMake ? 'border-red-500' : 'border-gray-300'
+                      className={`form-input ${
+                        errors.vehicleMake ? 'error' : ''
                       }`}
                       placeholder="Honda"
                     />
-                    {errors.vehicleMake && <p className="text-red-500 text-sm mt-1">{errors.vehicleMake}</p>}
+                    {errors.vehicleMake && <p className="error-message">{errors.vehicleMake}</p>}
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Model *
                     </label>
                     <input
@@ -268,17 +268,17 @@ export default function QuotePage() {
                       name="vehicleModel"
                       value={formData.vehicleModel}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors ${
-                        errors.vehicleModel ? 'border-red-500' : 'border-gray-300'
+                      className={`form-input ${
+                        errors.vehicleModel ? 'error' : ''
                       }`}
                       placeholder="Civic"
                     />
-                    {errors.vehicleModel && <p className="text-red-500 text-sm mt-1">{errors.vehicleModel}</p>}
+                    {errors.vehicleModel && <p className="error-message">{errors.vehicleModel}</p>}
                   </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       License Plate (Optional)
                     </label>
                     <input
@@ -286,12 +286,12 @@ export default function QuotePage() {
                       name="licensePlate"
                       value={formData.licensePlate}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
+                      className="form-input"
                       placeholder="ABC123"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       VIN (Optional)
                     </label>
                     <input
@@ -299,7 +299,7 @@ export default function QuotePage() {
                       name="vin"
                       value={formData.vin}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
+                      className="form-input"
                       placeholder="1HGBH41JXMN109186"
                     />
                   </div>
@@ -308,10 +308,10 @@ export default function QuotePage() {
 
               {/* Preferred Date/Time */}
               <div>
-                <h2 className="text-xl font-semibold text-ink mb-4">Preferred Date & Time</h2>
+                <h2 className="text-xl font-semibold text-gray-900 mb-6">Preferred Date & Time</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Preferred Date
                     </label>
                     <input
@@ -319,18 +319,18 @@ export default function QuotePage() {
                       name="preferredDate"
                       value={formData.preferredDate}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
+                      className="form-input"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="form-label">
                       Preferred Time
                     </label>
                     <select
                       name="preferredTime"
                       value={formData.preferredTime}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
+                      className="form-select"
                     >
                       <option value="">Select a time</option>
                       <option value="8:00 AM">8:00 AM</option>
@@ -350,29 +350,29 @@ export default function QuotePage() {
 
               {/* Services Needed */}
               <div>
-                <h2 className="text-xl font-semibold text-ink mb-4">Services Needed *</h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                <h2 className="text-xl font-semibold text-gray-900 mb-6">Services Needed *</h2>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                   {services.map((service) => (
                     <button
                       key={service}
                       type="button"
                       onClick={() => handleServiceToggle(service)}
-                      className={`p-3 text-sm rounded-lg border-2 transition-all duration-200 ${
+                      className={`service-tag ${
                         formData.servicesNeeded.includes(service)
-                          ? 'border-accent bg-accent text-white'
-                          : 'border-gray-300 bg-white text-gray-700 hover:border-accent'
+                          ? 'selected'
+                          : ''
                       }`}
                     >
                       {service}
                     </button>
                   ))}
                 </div>
-                {errors.servicesNeeded && <p className="text-red-500 text-sm mt-2">{errors.servicesNeeded}</p>}
+                {errors.servicesNeeded && <p className="error-message mt-2">{errors.servicesNeeded}</p>}
               </div>
 
               {/* Description */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="form-label">
                   Description of Issue/Service Needed *
                 </label>
                 <textarea
@@ -380,12 +380,12 @@ export default function QuotePage() {
                   value={formData.description}
                   onChange={handleInputChange}
                   rows={4}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-colors ${
-                    errors.description ? 'border-red-500' : 'border-gray-300'
+                  className={`form-textarea ${
+                    errors.description ? 'error' : ''
                   }`}
                   placeholder="Please describe the issue you're experiencing or the service you need..."
                 />
-                {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description}</p>}
+                {errors.description && <p className="error-message">{errors.description}</p>}
               </div>
 
               {/* Submit Button */}
@@ -393,7 +393,7 @@ export default function QuotePage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn btn-primary ripple px-12 py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="btn-premium px-12 py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Submitting...' : 'Submit Quote Request'}
                 </button>
